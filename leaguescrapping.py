@@ -26,8 +26,8 @@ def list():
         skins=main_frame.find_all("a",{"class":"image"})
         for j in skins:
             list.append(j['href'].split("/")[-3])
-    output=open("leagueskin.txt","w").write(str(list))
-    output.close()
+    with open("leagueChamp.js","w") as f:
+        f.write(f"export var leaguechamp = {str(list)}")
 if __name__=="__main__":
     list()
 
